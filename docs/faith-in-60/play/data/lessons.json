@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "0.1.0",
+  "translation": {
+    "name": "World English Bible",
+    "edition": "Classic",
+    "notice": "Scripture quotations are from the World English Bible Classic, in the public domain. Original summaries and reflections are separately labeled.",
+    "url": "https://ebible.org/eng-web/copyright.htm"
+  },
+  "lessons": [
+    {
+      "id": "build-on-the-rock",
+      "number": 1,
+      "contentVersion": 1,
+      "title": "Build on the rock",
+      "subtitle": "Hearing becomes living.",
+      "reference": "Matthew 7:24–27",
+      "artwork": "rock.jpg",
+      "artworkAlt": "A stone house on a large rock foundation beside a stream, under clearing storm clouds.",
+      "summary": "Jesus describes two builders. One builds on rock; the other builds on sand. Rain, floods, and wind strike both houses. Only the house on rock stands. Jesus connects the foundations to how people respond to his words.",
+      "challenge": {
+        "type": "observation",
+        "prompt": "What makes someone like the wise builder?",
+        "choices": [
+          {
+            "id": "avoid-storms",
+            "text": "Avoiding every storm"
+          },
+          {
+            "id": "hear-and-do",
+            "text": "Hearing Jesus’ words and doing them"
+          },
+          {
+            "id": "hear-only",
+            "text": "Hearing without acting"
+          }
+        ],
+        "answer": [
+          "hear-and-do"
+        ],
+        "explanation": "Both builders hear. The difference is putting Jesus’ words into practice."
+      },
+      "takeaway": "A strong foundation grows through practiced teaching.",
+      "application": "Which teaching of Jesus could you put into practice in one small way today?",
+      "sourceURL": "https://ebible.org/eng-web/MAT07.htm",
+      "verses": [
+        {
+          "number": 24,
+          "text": "“Everyone therefore who hears these words of mine and does them, I will liken him to a wise man who built his house on the rock."
+        },
+        {
+          "number": 25,
+          "text": "The rain came down, the floods came, and the winds blew and beat on that house; and it didn’t fall, for it was founded on the rock."
+        },
+        {
+          "number": 26,
+          "text": "Everyone who hears these words of mine and doesn’t do them will be like a foolish man who built his house on the sand."
+        },
+        {
+          "number": 27,
+          "text": "The rain came down, the floods came, and the winds blew and beat on that house; and it fell—and its fall was great.”"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "approvedVersion": 1,
+        "reviewer": "Michael Abadi Santoso",
+        "reviewedAt": "2026-10-08T16:11:28+00:00",
+        "contentDigest": "0b84c8f0f1de8a2e10089e9d9d7986896cf1ab452dc644adcd2c1646b737e8d3"
+      }
+    },
+    {
+      "id": "who-is-my-neighbor",
+      "number": 2,
+      "contentVersion": 1,
+      "title": "Who is my neighbor?",
+      "subtitle": "Compassion takes the next step.",
+      "reference": "Luke 10:25–37",
+      "artwork": "neighbor.jpg",
+      "artworkAlt": "A traveler bandages an injured man’s arm beside a road, with a loaded donkey nearby.",
+      "summary": "Asked who counts as a neighbor, Jesus tells of a wounded traveler. A priest and a Levite pass by. A Samaritan stops, tends the wounds, brings the traveler to an inn, and pays for further care.",
+      "challenge": {
+        "type": "sequence",
+        "prompt": "Put the Samaritan’s care in order.",
+        "choices": [
+          {
+            "id": "inn",
+            "text": "Bring him to an inn"
+          },
+          {
+            "id": "pay",
+            "text": "Pay for continued care"
+          },
+          {
+            "id": "wounds",
+            "text": "Tend his wounds"
+          }
+        ],
+        "answer": [
+          "wounds",
+          "inn",
+          "pay"
+        ],
+        "explanation": "His compassion becomes practical care. Jesus ends by inviting his listener to do likewise."
+      },
+      "takeaway": "Being a neighbor means showing mercy.",
+      "application": "Who near you could use a practical act of care today?",
+      "sourceURL": "https://ebible.org/eng-web/LUK10.htm",
+      "verses": [
+        {
+          "number": 25,
+          "text": "Behold, a certain lawyer stood up and tested him, saying, “Teacher, what shall I do to inherit eternal life?”"
+        },
+        {
+          "number": 26,
+          "text": "He said to him, “What is written in the law? How do you read it?”"
+        },
+        {
+          "number": 27,
+          "text": "He answered, “You shall love the Lord your God with all your heart, with all your soul, with all your strength, and with all your mind; and your neighbor as yourself.”"
+        },
+        {
+          "number": 28,
+          "text": "He said to him, “You have answered correctly. Do this, and you will live.”"
+        },
+        {
+          "number": 29,
+          "text": "But he, desiring to justify himself, asked Jesus, “Who is my neighbor?”"
+        },
+        {
+          "number": 30,
+          "text": "Jesus answered, “A certain man was going down from Jerusalem to Jericho, and he fell among robbers, who both stripped him and beat him, and departed, leaving him half dead."
+        },
+        {
+          "number": 31,
+          "text": "By chance a certain priest was going down that way. When he saw him, he passed by on the other side."
+        },
+        {
+          "number": 32,
+          "text": "In the same way a Levite also, when he came to the place and saw him, passed by on the other side."
+        },
+        {
+          "number": 33,
+          "text": "But a certain Samaritan, as he traveled, came where he was. When he saw him, he was moved with compassion,"
+        },
+        {
+          "number": 34,
+          "text": "came to him, and bound up his wounds, pouring on oil and wine. He set him on his own animal, brought him to an inn, and took care of him."
+        },
+        {
+          "number": 35,
+          "text": "On the next day, when he departed, he took out two denarii, gave them to the host, and said to him, ‘Take care of him. Whatever you spend beyond that, I will repay you when I return.’"
+        },
+        {
+          "number": 36,
+          "text": "Now which of these three do you think seemed to be a neighbor to him who fell among the robbers?”"
+        },
+        {
+          "number": 37,
+          "text": "He said, “He who showed mercy on him.” Then Jesus said to him, “Go and do likewise.”"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "approvedVersion": 1,
+        "reviewer": "Michael Abadi Santoso",
+        "reviewedAt": "2026-10-08T16:11:28+00:00",
+        "contentDigest": "1a9b7c07660210cd6cd5cec5517c615e71271bc761c0f32a404f2b8a997a7fbc"
+      }
+    },
+    {
+      "id": "look-at-yourself-first",
+      "number": 3,
+      "contentVersion": 1,
+      "title": "Look at yourself first",
+      "subtitle": "Begin with honest attention.",
+      "reference": "Matthew 7:1–5",
+      "artwork": "reflection.jpg",
+      "artworkAlt": "A large timber beam and a tiny curled wood shaving in a sunlit ancient carpentry workshop.",
+      "summary": "Jesus warns against judging others while overlooking our own faults. He pictures a person noticing a speck in someone else’s eye while carrying a beam in their own. First dealing with the beam allows them to see clearly enough to help.",
+      "challenge": {
+        "type": "observation",
+        "prompt": "What does Jesus say to address first?",
+        "choices": [
+          {
+            "id": "others",
+            "text": "The other person’s smallest fault"
+          },
+          {
+            "id": "beam",
+            "text": "The beam in your own eye"
+          },
+          {
+            "id": "reputation",
+            "text": "Your reputation among others"
+          }
+        ],
+        "answer": [
+          "beam"
+        ],
+        "explanation": "Jesus places honest self-examination before correcting someone else."
+      },
+      "takeaway": "Humility changes how we offer help.",
+      "application": "Before your next criticism, what might you need to examine in yourself?",
+      "sourceURL": "https://ebible.org/eng-web/MAT07.htm",
+      "verses": [
+        {
+          "number": 1,
+          "text": "“Don’t judge, so that you won’t be judged."
+        },
+        {
+          "number": 2,
+          "text": "For with whatever judgment you judge, you will be judged; and with whatever measure you measure, it will be measured to you."
+        },
+        {
+          "number": 3,
+          "text": "Why do you see the speck that is in your brother’s eye, but don’t consider the beam that is in your own eye?"
+        },
+        {
+          "number": 4,
+          "text": "Or how will you tell your brother, ‘Let me remove the speck from your eye,’ and behold, the beam is in your own eye?"
+        },
+        {
+          "number": 5,
+          "text": "You hypocrite! First remove the beam out of your own eye, and then you can see clearly to remove the speck out of your brother’s eye."
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "approvedVersion": 1,
+        "reviewer": "Michael Abadi Santoso",
+        "reviewedAt": "2026-10-08T16:11:28+00:00",
+        "contentDigest": "52993b9d013a8238b5c4b64e6939da537098df882ea59112af5e17b52b3ca058"
+      }
+    },
+    {
+      "id": "receiving-and-giving-mercy",
+      "number": 4,
+      "contentVersion": 1,
+      "title": "Receiving and giving mercy",
+      "subtitle": "Remember what you have received.",
+      "reference": "Matthew 18:21–35",
+      "artwork": "mercy.jpg",
+      "artworkAlt": "A seated older man extends an open hand toward a grateful servant beside an unrolled scroll.",
+      "summary": "Peter asks how often to forgive. Jesus tells of a servant whose enormous debt is forgiven. That servant then imprisons another over a much smaller debt. The king calls him back and condemns his refusal to show the mercy he received.",
+      "challenge": {
+        "type": "sequence",
+        "prompt": "Put the parable’s events in order.",
+        "choices": [
+          {
+            "id": "refuse",
+            "text": "The servant refuses mercy"
+          },
+          {
+            "id": "account",
+            "text": "The king calls him to account"
+          },
+          {
+            "id": "forgive",
+            "text": "The king forgives the huge debt"
+          }
+        ],
+        "answer": [
+          "forgive",
+          "refuse",
+          "account"
+        ],
+        "explanation": "After receiving mercy, the servant refuses to extend it. The king confronts that contradiction."
+      },
+      "takeaway": "Received mercy calls for a merciful response.",
+      "application": "Recall a time someone showed you patience. How might that shape an ordinary interaction today?",
+      "sourceURL": "https://ebible.org/eng-web/MAT18.htm",
+      "verses": [
+        {
+          "number": 21,
+          "text": "Then Peter came and said to him, “Lord, how often shall my brother sin against me, and I forgive him? Until seven times?”"
+        },
+        {
+          "number": 22,
+          "text": "Jesus said to him, “I don’t tell you until seven times, but, until seventy times seven."
+        },
+        {
+          "number": 23,
+          "text": "Therefore the Kingdom of Heaven is like a certain king who wanted to settle accounts with his servants."
+        },
+        {
+          "number": 24,
+          "text": "When he had begun to settle, one was brought to him who owed him ten thousand talents."
+        },
+        {
+          "number": 25,
+          "text": "But because he couldn’t pay, his lord commanded him to be sold, with his wife, his children, and all that he had, and payment to be made."
+        },
+        {
+          "number": 26,
+          "text": "The servant therefore fell down and knelt before him, saying, ‘Lord, have patience with me, and I will repay you all!’"
+        },
+        {
+          "number": 27,
+          "text": "The lord of that servant, being moved with compassion, released him and forgave him the debt."
+        },
+        {
+          "number": 28,
+          "text": "“But that servant went out and found one of his fellow servants who owed him one hundred denarii, and he grabbed him and took him by the throat, saying, ‘Pay me what you owe!’"
+        },
+        {
+          "number": 29,
+          "text": "“So his fellow servant fell down at his feet and begged him, saying, ‘Have patience with me, and I will repay you!’"
+        },
+        {
+          "number": 30,
+          "text": "He would not, but went and cast him into prison until he should pay back that which was due."
+        },
+        {
+          "number": 31,
+          "text": "So when his fellow servants saw what was done, they were exceedingly sorry, and came and told their lord all that was done."
+        },
+        {
+          "number": 32,
+          "text": "Then his lord called him in and said to him, ‘You wicked servant! I forgave you all that debt because you begged me."
+        },
+        {
+          "number": 33,
+          "text": "Shouldn’t you also have had mercy on your fellow servant, even as I had mercy on you?’"
+        },
+        {
+          "number": 34,
+          "text": "His lord was angry, and delivered him to the tormentors until he should pay all that was due to him."
+        },
+        {
+          "number": 35,
+          "text": "So my heavenly Father will also do to you, if you don’t each forgive your brother from your hearts for his misdeeds.”"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "approvedVersion": 1,
+        "reviewer": "Michael Abadi Santoso",
+        "reviewedAt": "2026-10-08T16:11:28+00:00",
+        "contentDigest": "f5968fd4cb2893f43bcbe2db0b29548cf65069e0105e11220527d27cd53b2258"
+      }
+    },
+    {
+      "id": "what-am-i-storing-up",
+      "number": 5,
+      "contentVersion": 1,
+      "title": "What am I storing up?",
+      "subtitle": "Life is more than what we possess.",
+      "reference": "Luke 12:13–21",
+      "artwork": "treasure.jpg",
+      "artworkAlt": "A sunlit stone granary filled with clay jars, sacks, and overflowing baskets of grain.",
+      "summary": "After warning against greed, Jesus tells of a rich man with an abundant harvest. He plans bigger barns and years of ease. But God tells him his life will end that night. Jesus contrasts storing treasure for ourselves with being rich toward God.",
+      "challenge": {
+        "type": "observation",
+        "prompt": "What does Jesus warn us not to measure life by?",
+        "choices": [
+          {
+            "id": "possessions",
+            "text": "The abundance of our possessions"
+          },
+          {
+            "id": "mercy",
+            "text": "The mercy we receive"
+          },
+          {
+            "id": "attention",
+            "text": "Our attention to God"
+          }
+        ],
+        "answer": [
+          "possessions"
+        ],
+        "explanation": "More stored goods cannot secure the man’s life. Jesus challenges his misplaced confidence."
+      },
+      "takeaway": "Possessions are a poor measure of life.",
+      "application": "What could being rich toward God look like in one small choice today?",
+      "sourceURL": "https://ebible.org/eng-web/LUK12.htm",
+      "verses": [
+        {
+          "number": 13,
+          "text": "One of the multitude said to him, “Teacher, tell my brother to divide the inheritance with me.”"
+        },
+        {
+          "number": 14,
+          "text": "But he said to him, “Man, who made me a judge or an arbitrator over you?”"
+        },
+        {
+          "number": 15,
+          "text": "He said to them, “Beware! Keep yourselves from covetousness, for a man’s life doesn’t consist of the abundance of the things which he possesses.”"
+        },
+        {
+          "number": 16,
+          "text": "He spoke a parable to them, saying, “The ground of a certain rich man produced abundantly."
+        },
+        {
+          "number": 17,
+          "text": "He reasoned within himself, saying, ‘What will I do, because I don’t have room to store my crops?’"
+        },
+        {
+          "number": 18,
+          "text": "He said, ‘This is what I will do. I will pull down my barns, build bigger ones, and there I will store all my grain and my goods."
+        },
+        {
+          "number": 19,
+          "text": "I will tell my soul, “Soul, you have many goods laid up for many years. Take your ease, eat, drink, and be merry.” ’"
+        },
+        {
+          "number": 20,
+          "text": "“But God said to him, ‘You foolish one, tonight your soul is required of you. The things which you have prepared—whose will they be?’"
+        },
+        {
+          "number": 21,
+          "text": "So is he who lays up treasure for himself, and is not rich toward God.”"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "approvedVersion": 1,
+        "reviewer": "Michael Abadi Santoso",
+        "reviewedAt": "2026-10-08T16:11:28+00:00",
+        "contentDigest": "3bbbd09ccbbc7c241a08adac36c2094f983cb159f6d22f7b0456d80dceaf8481"
+      }
+    },
+    {
+      "id": "make-room-for-the-word",
+      "number": 6,
+      "contentVersion": 1,
+      "title": "Make room for the word",
+      "subtitle": "Growth takes patient attention.",
+      "reference": "Mark 4:1–20",
+      "artwork": "sower.jpg",
+      "artworkAlt": "A farmer scatters seed beside a path, stones, thorny ground, and a green field.",
+      "summary": "A farmer scatters seed on a road, rocky ground, thorny ground, and good soil. Jesus explains that the farmer sows the word. Different ground pictures different responses. The good soil represents people who hear the word, accept it, and bear fruit.",
+      "challenge": {
+        "type": "observation",
+        "prompt": "What marks the good soil in Jesus’ explanation?",
+        "choices": [
+          {
+            "id": "receive",
+            "text": "Hearing, accepting, and bearing fruit"
+          },
+          {
+            "id": "brief-joy",
+            "text": "Feeling joy only at the start"
+          },
+          {
+            "id": "riches",
+            "text": "Being absorbed by riches"
+          }
+        ],
+        "answer": [
+          "receive"
+        ],
+        "explanation": "Hearing becomes a fruitful response when people accept the word. Other concerns can crowd it out."
+      },
+      "takeaway": "Make room for the word to take root.",
+      "application": "What small distraction could you set aside to give this passage your attention again?",
+      "sourceURL": "https://ebible.org/eng-web/MRK04.htm",
+      "verses": [
+        {
+          "number": 1,
+          "text": "Again he began to teach by the seaside. A great multitude was gathered to him, so that he entered into a boat in the sea and sat down. All the multitude were on the land by the sea."
+        },
+        {
+          "number": 2,
+          "text": "He taught them many things in parables, and told them in his teaching,"
+        },
+        {
+          "number": 3,
+          "text": "“Listen! Behold, the farmer went out to sow."
+        },
+        {
+          "number": 4,
+          "text": "As he sowed, some seed fell by the road, and the birds came and devoured it."
+        },
+        {
+          "number": 5,
+          "text": "Others fell on the rocky ground, where it had little soil, and immediately it sprang up, because it had no depth of soil."
+        },
+        {
+          "number": 6,
+          "text": "When the sun had risen, it was scorched; and because it had no root, it withered away."
+        },
+        {
+          "number": 7,
+          "text": "Others fell among the thorns, and the thorns grew up and choked it, and it yielded no fruit."
+        },
+        {
+          "number": 8,
+          "text": "Others fell into the good ground and yielded fruit, growing up and increasing. Some produced thirty times, some sixty times, and some one hundred times as much.”"
+        },
+        {
+          "number": 9,
+          "text": "He said, “Whoever has ears to hear, let him hear.”"
+        },
+        {
+          "number": 10,
+          "text": "When he was alone, those who were around him with the twelve asked him about the parables."
+        },
+        {
+          "number": 11,
+          "text": "He said to them, “To you is given the mystery of God’s Kingdom, but to those who are outside, all things are done in parables,"
+        },
+        {
+          "number": 12,
+          "text": "that ‘seeing they may see and not perceive, and hearing they may hear and not understand, lest perhaps they should turn again, and their sins should be forgiven them.’ ”"
+        },
+        {
+          "number": 13,
+          "text": "He said to them, “Don’t you understand this parable? How will you understand all of the parables?"
+        },
+        {
+          "number": 14,
+          "text": "The farmer sows the word."
+        },
+        {
+          "number": 15,
+          "text": "The ones by the road are the ones where the word is sown; and when they have heard, immediately Satan comes and takes away the word which has been sown in them."
+        },
+        {
+          "number": 16,
+          "text": "These in the same way are those who are sown on the rocky places, who, when they have heard the word, immediately receive it with joy."
+        },
+        {
+          "number": 17,
+          "text": "They have no root in themselves, but are short-lived. When oppression or persecution arises because of the word, immediately they stumble."
+        },
+        {
+          "number": 18,
+          "text": "Others are those who are sown among the thorns. These are those who have heard the word,"
+        },
+        {
+          "number": 19,
+          "text": "and the cares of this age, and the deceitfulness of riches, and the lusts of other things entering in choke the word, and it becomes unfruitful."
+        },
+        {
+          "number": 20,
+          "text": "Those which were sown on the good ground are those who hear the word, accept it, and bear fruit, some thirty times, some sixty times, and some one hundred times.”"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "approvedVersion": 1,
+        "reviewer": "Michael Abadi Santoso",
+        "reviewedAt": "2026-10-08T16:11:28+00:00",
+        "contentDigest": "049b5a288fb24532dc88f458c3dad7bdbaff983c7d9cbc2136943f199886acf3"
+      }
+    },
+    {
+      "id": "the-lost-sheep",
+      "number": 7,
+      "contentVersion": 1,
+      "title": "The lost sheep",
+      "subtitle": "There is joy in being found.",
+      "reference": "Luke 15:1–7",
+      "artwork": "sheep.jpg",
+      "artworkAlt": "A smiling shepherd carries a sheep across his shoulders at sunset, with a flock on the hillside.",
+      "summary": "Some listeners complain that Jesus welcomes sinners. He answers with a shepherd’s story: one sheep is lost, so the shepherd searches until he finds it. He carries it home with joy and invites others to celebrate.",
+      "challenge": {
+        "type": "sequence",
+        "prompt": "Put the shepherd’s actions in order.",
+        "choices": [
+          {
+            "id": "celebrate",
+            "text": "Invite friends to rejoice"
+          },
+          {
+            "id": "search",
+            "text": "Search for the lost sheep"
+          },
+          {
+            "id": "carry",
+            "text": "Carry it home joyfully"
+          }
+        ],
+        "answer": [
+          "search",
+          "carry",
+          "celebrate"
+        ],
+        "explanation": "Jesus connects the shepherd’s joy with heaven’s joy over one sinner who repents."
+      },
+      "takeaway": "Turning back is met with joy.",
+      "application": "What is one small way you would like to turn toward God today?",
+      "sourceURL": "https://ebible.org/eng-web/LUK15.htm",
+      "verses": [
+        {
+          "number": 1,
+          "text": "Now all the tax collectors and sinners were coming close to him to hear him."
+        },
+        {
+          "number": 2,
+          "text": "The Pharisees and the scribes murmured, saying, “This man welcomes sinners, and eats with them.”"
+        },
+        {
+          "number": 3,
+          "text": "He told them this parable:"
+        },
+        {
+          "number": 4,
+          "text": "“Which of you men, if you had one hundred sheep and lost one of them, wouldn’t leave the ninety-nine in the wilderness and go after the one that was lost, until he found it?"
+        },
+        {
+          "number": 5,
+          "text": "When he has found it, he carries it on his shoulders, rejoicing."
+        },
+        {
+          "number": 6,
+          "text": "When he comes home, he calls together his friends and his neighbors, saying to them, ‘Rejoice with me, for I have found my sheep which was lost!’"
+        },
+        {
+          "number": 7,
+          "text": "I tell you that even so there will be more joy in heaven over one sinner who repents, than over ninety-nine righteous people who need no repentance."
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "approvedVersion": 1,
+        "reviewer": "Michael Abadi Santoso",
+        "reviewedAt": "2026-10-08T16:11:28+00:00",
+        "contentDigest": "8afff11f3f4154434ee04c01eb8584f973d63cd3d209679e25222ab97b08c625"
+      }
+    }
+  ]
+}
