@@ -1,6 +1,7 @@
 {
   "mode": "release",
   "contentVersion": "0.1.0",
-  "contentSHA256": "c1bf7f5822247704960f07b041f094554a3593cf99e1b8fa9af546948e40e237",
-  "builtAt": "2026-10-08T17:08:43+00:00"
+  "lessonCount": 100,
+  "contentSHA256": "5cdbddcf88adc7818469207df0ea85f11b1e0f6e33307984432680638b1efdb0",
+  "builtAt": "2026-10-11T03:33:00+00:00"
 }

@@ -33,26 +33,65 @@ function credit() {
   footer.innerHTML = `<a href="${escapeHTML(content.translation.url)}" target="_blank" rel="noopener noreferrer">World English Bible · Classic · Public domain</a>`;
 }
 function home() {
+  const total = content.lessons.length;
   const current = content.lessons.find(lesson => !completed.has(lesson.id)) || content.lessons[0];
   const completeCount = content.lessons.filter(lesson => completed.has(lesson.id)).length;
-  const dots = content.lessons.map(lesson => `<span class="dot${completed.has(lesson.id) ? ' done' : ''}"></span>`).join('');
-  app.innerHTML = `<div class="topline"><span class="eyebrow">Your daily discovery</span><span class="daily-count"><span class="dots" aria-hidden="true">${dots}</span>${completeCount} of 7 explored</span></div>
+  app.innerHTML = `<div class="topline"><span class="eyebrow">Your daily discovery</span><span class="daily-count"><progress value="${completeCount}" max="${total}" aria-label="Stories explored"></progress>${completeCount} of ${total} explored</span></div>
   <section class="hero" aria-labelledby="today-heading">
     <div class="hero-art"><img data-artwork src="${imageURL(current)}" alt="${escapeHTML(current.artworkAlt)}"><span class="art-tag">${escapeHTML(current.reference)}</span></div>
-    <div class="hero-copy"><span class="eyebrow">${completeCount === 7 ? 'A story to return to' : 'Today · Session ' + current.number}</span><h1 id="today-heading">${escapeHTML(current.title)}</h1><p class="subtitle">${escapeHTML(current.subtitle)}</p><div class="tag-row"><span class="tag">About a minute</span><span class="tag">One small discovery</span></div><a class="primary" href="${storyURL(current.id)}">${completeCount === 7 ? 'Explore again' : 'Begin the story'}<span class="arrow" aria-hidden="true">↗</span></a><p class="home-note">Take your time. There is no countdown.</p></div>
+    <div class="hero-copy"><span class="eyebrow">${completeCount === total ? 'A story to return to' : 'Today · Story ' + current.number}</span><h1 id="today-heading">${escapeHTML(current.title)}</h1><p class="subtitle">${escapeHTML(current.subtitle)}</p><div class="tag-row"><span class="tag">About a minute</span><span class="tag">One small discovery</span></div><a class="primary" href="${storyURL(current.id)}">${completeCount === total ? 'Explore again' : 'Begin the story'}<span class="arrow" aria-hidden="true">↗</span></a><p class="home-note">Take your time. There is no countdown.</p></div>
   </section>
-  <section class="journey" id="journey" aria-labelledby="journey-heading"><div class="section-head"><div><span class="eyebrow">A week in the Gospels</span><h2 id="journey-heading">Your journey</h2></div><p>Seven stories to discover.<br>Open any preview below.</p></div><div class="journey-grid">${content.lessons.map(lesson => `<a class="journey-card" href="${storyURL(lesson.id)}"><div class="journey-image"><img data-artwork loading="lazy" src="${imageURL(lesson)}" alt="${escapeHTML(lesson.artworkAlt)}"></div><div class="journey-card-copy"><span class="card-number">Session ${String(lesson.number).padStart(2, '0')}${completed.has(lesson.id) ? '<span class="card-check">Explored ✓</span>' : ''}</span><h3>${escapeHTML(lesson.title)}</h3><p class="micro">${escapeHTML(lesson.reference)}</p></div></a>`).join('')}</div></section>
+  <section class="journey" id="journey" aria-labelledby="journey-heading"><div class="section-head"><div><span class="eyebrow">Discover the Gospels</span><h2 id="journey-heading">Your story library</h2></div><p>${total} illustrated discoveries.<br>Open any preview below.</p></div>
+  <div class="library-controls"><label class="library-search">Find a story<input id="library-search" type="search" placeholder="Title, passage, or a word to explore" autocomplete="off"></label><label>Gospel<select id="library-book"><option value="">All Gospels</option><option>Matthew</option><option>Mark</option><option>Luke</option><option>John</option></select></label><label>Show<select id="library-status"><option value="">All stories</option><option value="new">Not explored yet</option><option value="done">Explored</option></select></label></div>
+  <p class="library-results" id="library-results" role="status"></p><div id="library-grid"></div><button class="secondary library-more" id="library-more">Show more stories</button></section>
   <p class="intro-note">These are short, original introductions to Gospel passages. Each story includes the full passage, a discovery challenge, and an optional moment of reflection.</p>
   <p class="storage-note">${storageAvailable ? 'Your preview progress stays in this browser. No account needed.' : 'This browser cannot save progress. You can still play every story.'}</p>
-  ${draft ? '<p class="draft-footnote">Editorial draft for review. Stories and illustrations have not yet been approved for public distribution.</p>' : ''}`;
+  ${draft ? '<p class="draft-footnote">Editorial draft for review. This expanded collection is awaiting approval for public distribution.</p>' : ''}`;
   imageFallbacks();
+  const search = document.querySelector('#library-search');
+  const book = document.querySelector('#library-book');
+  const status = document.querySelector('#library-status');
+  const more = document.querySelector('#library-more');
+  let limit = 20;
+  function renderLibrary(reset = false) {
+    if (reset) limit = 20;
+    const query = (search.value || '').trim().toLocaleLowerCase();
+    const filtered = content.lessons.filter(lesson => {
+      const matchesText = !query || `${lesson.number} ${lesson.title} ${lesson.subtitle} ${lesson.reference} ${lesson.summary}`.toLocaleLowerCase().includes(query);
+      const matchesBook = !book.value || lesson.reference.split(' ')[0] === book.value;
+      const matchesStatus = !status.value || (status.value === 'done' ? completed.has(lesson.id) : !completed.has(lesson.id));
+      return matchesText && matchesBook && matchesStatus;
+    });
+    const visible = filtered.slice(0, limit);
+    const groups = new Map();
+    for (const lesson of visible) {
+      const first = Math.floor((lesson.number - 1) / 10) * 10 + 1;
+      if (!groups.has(first)) groups.set(first, []);
+      groups.get(first).push(lesson);
+    }
+    document.querySelector('#library-grid').innerHTML = [...groups].map(([first, lessons]) => `<section class="library-chapter" aria-label="Stories ${first} to ${Math.min(first + 9, total)}"><h3 class="chapter-label">Stories ${String(first).padStart(2, '0')}–${Math.min(first + 9, total)}</h3><div class="journey-grid">${lessons.map(lesson => `<a class="journey-card" href="${storyURL(lesson.id)}"><div class="journey-image"><img data-artwork loading="lazy" src="${imageURL(lesson)}" alt="${escapeHTML(lesson.artworkAlt)}"></div><div class="journey-card-copy"><span class="card-number">Story ${String(lesson.number).padStart(2, '0')}${completed.has(lesson.id) ? '<span class="card-check">Explored ✓</span>' : ''}</span><h3>${escapeHTML(lesson.title)}</h3><p class="micro">${escapeHTML(lesson.reference)}</p></div></a>`).join('')}</div></section>`).join('') || '<div class="library-empty"><h3>A different word might open a path.</h3><p>Try another title or passage, or clear a filter to see more stories.</p></div>';
+    document.querySelector('#library-results').textContent = filtered.length ? `Showing ${visible.length} of ${filtered.length} ${filtered.length === 1 ? 'story' : 'stories'}` : 'No matching stories';
+    more.hidden = visible.length >= filtered.length;
+    imageFallbacks();
+  }
+  search.addEventListener('input', () => renderLibrary(true));
+  book.addEventListener('change', () => renderLibrary(true));
+  status.addEventListener('change', () => renderLibrary(true));
+  more.addEventListener('click', () => {
+    const previous = limit;
+    limit += 20;
+    renderLibrary();
+    document.querySelectorAll('#library-grid .journey-card')[previous]?.focus({preventScroll:true});
+  });
+  renderLibrary();
 }
+
 function story(lesson) {
   document.title = `${lesson.title} · Faith in 60`;
   const question = lesson.challenge;
-  app.innerHTML = `<div class="story-heading"><a class="back-link" href="${root.href}"><span aria-hidden="true">←</span> Your journey</a><span class="micro">Session ${lesson.number} of 7 · About a minute</span></div>
+  app.innerHTML = `<div class="story-heading"><a class="back-link" href="${root.href}"><span aria-hidden="true">←</span> Your journey</a><span class="micro">Story ${lesson.number} of ${content.lessons.length} · About a minute</span></div>
   <div class="story-layout"><aside class="story-visual" aria-label="Story illustration"><div class="image-wrap"><img data-artwork src="${imageURL(lesson)}" alt="${escapeHTML(lesson.artworkAlt)}"><span class="art-tag">${escapeHTML(lesson.reference)}</span></div><p class="caption">An original illustration, inspired by the passage.<br>A quiet invitation to look a little closer.</p></aside>
-  <article class="story-body"><span class="eyebrow">${escapeHTML(lesson.reference)}</span><h1>${escapeHTML(lesson.title)}</h1><p class="story-subtitle">${escapeHTML(lesson.subtitle)}</p><p class="copy-label">The story · Original summary</p><p class="story-intro">${escapeHTML(lesson.summary)}</p><section class="discovery" aria-labelledby="challenge-heading"><p class="question-type">${question.type === 'sequence' ? 'Connect the moments' : 'Notice the detail'}</p><h2 id="challenge-heading" tabindex="-1">${escapeHTML(question.prompt)}</h2><div id="challenge"></div><div id="feedback" aria-live="polite" aria-atomic="true"></div></section><div id="completion"></div>${draft ? '<p class="draft-footnote">Editorial draft · This story and its illustration await human review.</p>' : ''}</article></div>`;
+  <article class="story-body"><span class="eyebrow">${escapeHTML(lesson.reference)}</span><h1>${escapeHTML(lesson.title)}</h1><p class="story-subtitle">${escapeHTML(lesson.subtitle)}</p><p class="copy-label">The story · Original summary</p><p class="story-intro">${escapeHTML(lesson.summary)}</p><section class="discovery" aria-labelledby="challenge-heading"><p class="question-type">${question.type === 'sequence' ? 'Connect the moments' : 'Notice the detail'}</p><h2 id="challenge-heading" tabindex="-1">${escapeHTML(question.prompt)}</h2><div id="challenge"></div><div id="feedback" aria-live="polite" aria-atomic="true"></div></section><div id="completion"></div>${draft ? `<p class="draft-footnote">Editorial preview · ${lesson.review.status === 'approved' ? 'This exact story is approved; the expanded collection is still under review.' : 'This story and its illustration await human review.'}</p>` : ''}</article></div>`;
   imageFallbacks();
   let selected = [], solved = false;
   const challenge = document.querySelector('#challenge');
@@ -109,15 +148,15 @@ function story(lesson) {
     const invitation = appStore ? config.appStoreURL : config.testFlightURL;
     const appStorePending = appStore && config.appStoreReleaseState !== 'live';
     const invitationCopy = appStorePending
-      ? '<p>The iPhone app is coming soon. Explore all seven stories here while we prepare its App Store release.</p>'
+      ? `<p>The iPhone app is coming soon. Explore all ${content.lessons.length} stories here while we prepare its App Store release.</p>`
       : invitation
-      ? `<p>${appStore ? 'Seven illustrated Gospel stories, saved stories, and offline practice for iPhone.' : 'Try the seven-day iPhone pilot through Apple TestFlight.'}</p><a class="secondary" href="${escapeHTML(invitation)}" target="_blank" rel="noopener noreferrer">${appStore ? 'View on the App Store' : 'Join the iPhone pilot'} ↗</a>`
+      ? `<p>${appStore ? `${content.lessons.length} illustrated Gospel discoveries, saved stories, and offline practice for iPhone.` : 'Try the seven-day iPhone pilot through Apple TestFlight.'}</p><a class="secondary" href="${escapeHTML(invitation)}" target="_blank" rel="noopener noreferrer">${appStore ? 'View on the App Store' : 'Join the iPhone pilot'} ↗</a>`
       : '<p>The iPhone app link is not available yet. You can keep exploring these browser previews.</p>';
     document.querySelector('#completion').innerHTML = `<section class="completion" aria-label="Your discovery"><span class="eyebrow finished-label">A thought to carry with you</span><p class="takeaway">${escapeHTML(lesson.takeaway)}</p>
     <details class="optional-card"><summary><span><span class="optional-hint">If you have another moment</span>Read the full passage</span></summary><div class="passage">${lesson.verses.map(verse => `<p><sup>${verse.number}</sup>${escapeHTML(verse.text)}</p>`).join('')}<p class="source-credit">${escapeHTML(lesson.reference)} · World English Bible Classic. Public domain. Verse text is unchanged; layout whitespace is normalized. <a href="${escapeHTML(lesson.sourceURL)}" target="_blank" rel="noopener noreferrer">Read at eBible.org ↗</a></p></div></details>
     <details class="optional-card"><summary><span><span class="optional-hint">Optional · Personal reflection</span>Let it meet your day</span></summary><p class="reflection-prompt">${escapeHTML(lesson.application)}</p><p class="reflection-note">Take this with you, or simply pause. There is no answer to submit or grade.</p></details>
     <div class="end-actions"><button class="secondary" id="share-story">Share this story <span aria-hidden="true">↗</span></button><a class="primary" href="${next ? storyURL(next.id) : root.href}">${next ? 'Next preview' : 'Back to your journey'} <span aria-hidden="true">→</span></a></div><p class="share-status" id="share-status" role="status"></p><button class="text-button replay" id="replay">Explore this story again</button>
-    <div class="app-invitation"><h3>Seven stories. More ways to return.</h3>${invitationCopy}${config.feedbackEmail ? `<p><a href="mailto:${escapeHTML(config.feedbackEmail)}">Contact support</a></p>` : ''}</div>${!storageAvailable ? '<p class="storage-note">Your progress could not be saved in this browser.</p>' : ''}</section>`;
+    <div class="app-invitation"><h3>${content.lessons.length} stories. More ways to return.</h3>${invitationCopy}${config.feedbackEmail ? `<p><a href="mailto:${escapeHTML(config.feedbackEmail)}">Contact support</a></p>` : ''}</div>${!storageAvailable ? '<p class="storage-note">Your progress could not be saved in this browser.</p>' : ''}</section>`;
     document.querySelector('#replay').addEventListener('click', () => { story(lesson); document.querySelector('#challenge-heading').focus({preventScroll:true}); });
     const share = document.querySelector('#share-story');
     const status = document.querySelector('#share-status');
@@ -145,7 +184,7 @@ async function start() {
     const responses = await Promise.all([fetch(urlFor('data/lessons.json')), fetch(urlFor('data/config.json'))]);
     if (responses.some(response => !response.ok)) throw new Error('Content could not be loaded.');
     [content, config] = await Promise.all(responses.map(response => response.json()));
-    if (content.schemaVersion !== 1 || !Array.isArray(content.lessons) || content.lessons.length !== 7) throw new Error('Content format is not supported.');
+    if (content.schemaVersion !== 1 || !Array.isArray(content.lessons) || content.lessons.length !== 100) throw new Error('Content format is not supported.');
     credit();
     const path = decodeURIComponent(location.pathname).slice(root.pathname.length).replace(/^\/+|\/+$/g, '');
     if (path === '' || path === 'index.html') home();
@@ -153,7 +192,7 @@ async function start() {
       const match = /^stories\/([a-z0-9-]+)(?:\/index\.html)?$/.exec(path);
       const lesson = match && content.lessons.find(item => item.id === match[1]);
       if (lesson) story(lesson);
-      else app.innerHTML = `<div class="not-found"><span class="eyebrow">A different path</span><h1>This story isn’t here.</h1><p>Choose one of the seven Gospel stories in your journey.</p><a class="primary" href="${root.href}">Return to your journey</a></div>`;
+      else app.innerHTML = `<div class="not-found"><span class="eyebrow">A different path</span><h1>This story isn’t here.</h1><p>Choose from the Gospel stories in your library.</p><a class="primary" href="${root.href}">Return to your journey</a></div>`;
     }
   } catch (error) {
     app.innerHTML = `<div class="not-found"><span class="eyebrow">A small interruption</span><h1>Your story couldn’t open.</h1><p>Check your connection and reload. For a local preview, open this page through the project’s local web server.</p><button class="primary" id="reload">Try again</button></div>`;
