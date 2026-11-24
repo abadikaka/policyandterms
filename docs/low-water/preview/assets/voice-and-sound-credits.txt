@@ -1,0 +1,36 @@
+LOW WATER
+Voice and sound credits
+
+Mara, Elsie, Abel Bell and the coast operator are fictional characters. All dialogue was written for Low Water. Their voices are synthetic. The named corpus contributors did not perform these roles.
+
+Mara
+Rendered with the Alba medium voice. Cassia Valentini-Botinhao and Junichi Yamagishi, Alba speech corpus, University of Edinburgh, 2019. The model was fine-tuned from hifi_tts_92, trained on reader 92 in NVIDIA’s Hi-Fi Multi-Speaker English TTS Dataset (E. Bakhturina, V. Lavrukhin, B. Ginsburg and Y. Zhang, 2021). Both corpora are licensed under Creative Commons Attribution 4.0 International. The game uses the generated phrases with equalisation and a short room reflection.
+https://doi.org/10.7488/ds/2506
+https://datashare.ed.ac.uk/bitstreams/ca0b398a-635c-48cd-b85a-beb6f8401e0d/download
+https://www.openslr.org/109/
+
+Elsie
+Rendered with the LJ Speech high voice, trained from scratch on the public-domain LJ Speech Dataset by Keith Ito and Linda Johnson. Her phrases were edited with original tape hiss, tape-speed variation and station reflections.
+https://keithito.com/LJ-Speech-Dataset/
+
+Abel Bell and the coast operator
+Rendered with two individual voices from LibriTTS high (speaker indices 3 and 5, corpus IDs 6701 and 922). The model was trained from scratch on LibriTTS train-clean-360. Heiga Zen, Viet Dang, Rob Clark, Yu Zhang, Ron J. Weiss, Ye Jia, Zhifeng Chen and Yonghui Wu, “LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech,” 2019. Corpus supplied under Creative Commons Attribution 4.0 International. Original phrases were edited, gain-matched and filtered separately for archival tape and marine radio.
+https://www.openslr.org/60/
+https://doi.org/10.21437/Interspeech.2019-2441
+
+The Occupied Line
+The cast and dialogue in Chapters 2–20 were created for Low Water. Mara uses the Alba voice above. The Caller's borrowed voice uses LJ Speech. June (8699), Nell (3638), Toby (3922), Ruth (4535), Pip (8848), Tom (6701), the clerk (3615), Coast (922), pilot Len (2531), and Mrs Dean (1638) use the LibriTTS high voice and its corpus cited above. These synthetic roles were rendered offline with Piper, edited for level and room tone, and compressed for mobile playback.
+
+Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+
+Voice production
+Offline production in Piper 1.8.0 using the Rhasspy Piper Voices model collection, published with the MIT repository license. The release contains rendered audio. Model cards, configuration and voice weights correspond to revision 6b9cfaacb4fb2e02a9621227e3c1a48bec9710c3.
+https://huggingface.co/rhasspy/piper-voices/tree/6b9cfaacb4fb2e02a9621227e3c1a48bec9710c3
+https://huggingface.co/rhasspy/piper-voices/blob/6b9cfaacb4fb2e02a9621227e3c1a48bec9710c3/en/en_GB/alba/medium/MODEL_CARD
+https://huggingface.co/rhasspy/piper-voices/blob/6b9cfaacb4fb2e02a9621227e3c1a48bec9710c3/en/en_US/hifi_tts_92/medium/MODEL_CARD
+https://huggingface.co/rhasspy/piper-voices/blob/6b9cfaacb4fb2e02a9621227e3c1a48bec9710c3/en/en_US/ljspeech/high/MODEL_CARD
+https://huggingface.co/rhasspy/piper-voices/blob/6b9cfaacb4fb2e02a9621227e3c1a48bec9710c3/en/en_US/libritts/high/MODEL_CARD
+
+Sound design
+All seven room tones, memorial bell strikes, tape transport, radio squelch, mooring sounds, launch motor and distant shore-bird calls were synthesised specifically for this production. The original game dialogue, sound design and edits use no third-party music or location recordings.
